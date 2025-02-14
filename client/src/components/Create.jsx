@@ -58,13 +58,13 @@ function Create() {
 
       // Create public client
       const publicClient = createPublicClient({
-        chain: flowTestnet,
+        chain: seiTestnet,
         transport: http()
       })
 
       // Create wallet client
       const walletClient = createWalletClient({
-        chain: flowTestnet,
+        chain: seiTestnet,
         transport: custom(window.ethereum)
       })
 
@@ -72,22 +72,22 @@ function Create() {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x221' }]
+          params: [{ chainId: '0x530' }]
         })
       } catch (switchError) {
         if (switchError.code === 4902) {
           await window.ethereum.request({
             method: 'wallet_addEthereumChain',
             params: [{
-              chainId: '0x221',
+              chainId: '0x530',
               chainName: 'SEITestnet',
               nativeCurrency: {
-                name: 'FLOW',
-                symbol: 'FLOW',
+                name: 'SEI',
+                symbol: 'SEI',
                 decimals: 18
               },
-              rpcUrls: ['https://testnet.evm.onflow.org'],
-              blockExplorerUrls: ['https://testnet.flowscan.org']
+              rpcUrls: ['https://evm-rpc-testnet.sei-apis.com'],
+              blockExplorerUrls: ['https://testnet.sei.io/explorer']
             }]
           })
         }
@@ -102,7 +102,7 @@ function Create() {
       // Prepare the contract write
       const { request } = await publicClient.simulateContract({
         account: user.wallet.address,
-        address: '0x5a8E771b5D0B3d2e4d218478CB7C9029d00c4e5a',
+        address: '0x73511669fd4dE447feD18BB79bAFeAC93aB7F31f',
         abi: wagmiAbi,
         functionName: 'submitQuestion',
         args: [question],
@@ -139,7 +139,7 @@ function Create() {
             onClick={() => navigate('/')}
             className="text-3xl font-bold text-pink-600 cursor-pointer hover:text-pink-500 transition-colors mb-4"
           >
-            PrediFlow
+            PredicAI
           </h1>
           <div className="bg-blue-500 rounded-2xl p-2">
             <ConnectButton />

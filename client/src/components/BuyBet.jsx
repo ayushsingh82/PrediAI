@@ -59,7 +59,7 @@ function BuyBet() {
 
       // Create public client
       const publicClient = createPublicClient({
-        chain: flowTestnet,
+        chain: seiTestnet,
         transport: http()
       })
 
@@ -73,14 +73,14 @@ function BuyBet() {
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x221' }]
+          params: [{ chainId: '0x530' }]
         })
       } catch (switchError) {
         if (switchError.code === 4902) {
           await window.ethereum.request({
             method: 'wallet_addEthereumChain',
             params: [{
-              chainId: '0x221',
+              chainId: '0x530',
               chainName: 'SEITestnet',
               nativeCurrency: {
                 name: 'SEI',
@@ -141,7 +141,7 @@ function BuyBet() {
             onClick={() => navigate('/')}
             className="text-3xl font-bold text-pink-600 cursor-pointer hover:text-pink-500 transition-colors mb-4"
           >
-            PrediFlow
+            PredicAI
           </h1>
           <div className="bg-blue-500 rounded-2xl p-2">
             <ConnectButton />
