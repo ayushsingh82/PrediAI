@@ -1,17 +1,18 @@
-# PredictFlow
+# PrediAI
 
-PredictFlow is an AI-powered prediction market on the telegram mini app built on the Flow blockchain, leveraging Eliza AI and Polymarket data to enhance user experience and decision-making
+PrediAI is an AI-powered prediction market on the telegram mini app built on the SEI blockchain, leveraging Eliza AI and Polymarket data to enhance user experience and decision-making.
+AI is designed to interact with users and provide insights before they make a prediction using polymarket data.
 
 ## Overview
 
-PredictFlow allows users to make predictions and win rewards. With Eliza AI integrated, users can receive insights, analysis, and answers to their queries before making a prediction. The platform is designed for seamless interaction with an intuitive swipe-based interface.
+PrediAI allows users to make predictions and win rewards. With Eliza AI integrated, users can receive insights, analysis, and answers to their queries before making a prediction. The platform is designed for seamless interaction with an intuitive swipe-based interface.
 
-Flow explorer Link - https://evm-testnet.flowscan.io/address/0x37dD26d18abeC2d311e82177f9fa58E9DC14b579
+
 
 ## Features
 
-- **Blockchain-Powered**: Built on the Flow blockchain for secure and transparent transactions.
-- **AI Assistance**: Eliza AI provides real-time insights and analysis to help users make informed predictions.
+- **Blockchain-Powered**: Built on the SEI blockchain for secure and transparent transactions.
+- **AI Assistance**: Eliza AI provides real-time insights from polymarket data  and analysis to help users make informed predictions.
 - **Polymarket Data**: Utilizes Polymarket for accurate and up-to-date market data.
 - **Swipe to Predict**:
   - Swipe Right to confirm a prediction.
@@ -29,7 +30,7 @@ Flow explorer Link - https://evm-testnet.flowscan.io/address/0x37dD26d18abeC2d31
 
 ## Tech Stack
 
-- **Blockchain**: Flow
+- **Blockchain**: SEI
 - **AI**: Eliza AI
 - **Market Data**: Polymarket
 - **Frontend**: React (with Vite)
@@ -41,4 +42,4 @@ This project is licensed under the MIT License.
 
 ---
 
-Happy predicting with **PredictFlow**! 🚀
+Happy predicting with **PredicAI**! 🚀
