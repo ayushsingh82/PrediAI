@@ -1,41 +1,40 @@
-import { createPublicClient, createWalletClient , http, custom } from 'viem'
+import { createPublicClient, createWalletClient, http, custom } from 'viem'
 import { privateKeyToAccount } from 'viem/accounts'
-import { flowTestnet } from 'viem/chains'
+import { seiTestnet } from 'viem/chains'
 
-// Custom Flow Testnet configuration
-export const flowTestnetTry = {
-  id: 545,
-  name: 'Flow Testnet',
-  network: 'flow-testnet',
+// Sei Testnet configuration
+export const seiTestnetTry = {
+  id: 1328,
+  name: 'Sei Testnet',
+  network: 'sei-testnet',
   nativeCurrency: {
     decimals: 18,
-    name: 'Flow',
-    symbol: 'FLOW',
+    name: 'SEI',
+    symbol: 'SEI',
   },
   rpcUrls: {
     default: {
-      http: ['https://testnet.evm.nodes.onflow.org'],
-      
+      http: ['https://evm-rpc-testnet.sei-apis.com'],
     },
     public: {
-      http: ['https://testnet.evm.nodes.onflow.org'],
+      http: ['https://evm-rpc-testnet.sei-apis.com'],
     },
   },
   blockExplorers: {
-    default: { name: 'FlowScan', url: 'https://testnet.flowscan.org' },
+    default: { name: 'Sei Explorer', url: 'https://testnet.sei.io/explorer' },
   },
   testnet: true,
 }
 
 // Public client
 export const publicClient = createPublicClient({
-  chain: flowTestnet,
+  chain: seiTestnet,
   transport: http()
 })
 
 // Wallet client
 export const walletClient = createWalletClient({
-  chain: flowTestnet,
+  chain: seiTestnet,
   transport: custom(window.ethereum)
 })
 
@@ -43,7 +42,7 @@ export const walletClient = createWalletClient({
 export const getWalletClient = () => {
   if (typeof window !== 'undefined' && window.ethereum) {
     return createWalletClient({
-      chain: flowTestnet,
+      chain: seiTestnet,
       transport: custom(window.ethereum),
       account: window.ethereum.selectedAddress
     })
@@ -53,15 +52,15 @@ export const getWalletClient = () => {
 
 // Chain configuration for wallet connection
 export const chainConfig = {
-  chainId: '0x221', // 545 in hex
-  chainName: 'Flow Testnet',
+  chainId: '0x530', // 1328 in hex
+  chainName: 'Sei Testnet',
   nativeCurrency: {
-    name: 'Flow',
-    symbol: 'FLOW',
+    name: 'SEI',
+    symbol: 'SEI',
     decimals: 18
   },
-  rpcUrls: ['https://testnet.evm.nodes.onflow.org'],
-  blockExplorerUrls: ['https://testnet.flowscan.org']
+  rpcUrls: ['https://evm-rpc-testnet.sei-apis.com'],
+  blockExplorerUrls: ['https://testnet.sei.io/explorer']
 }
 
 // JSON-RPC Account

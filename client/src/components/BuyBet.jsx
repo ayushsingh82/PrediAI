@@ -9,20 +9,20 @@ import { createPublicClient , http } from 'viem'
 import { createWalletClient ,custom } from 'viem'
 
 const flowTestnet = {
-  id: 545,
-  name: 'Flow Testnet',
-  network: 'flow-testnet',
+  id: 1328,
+  name: 'SEITestnet',
+  network: 'sei-testnet',
   nativeCurrency: {
     decimals: 18,
-    name: 'FLOW',
-    symbol: 'FLOW',
+    name: 'SEI',
+    symbol: 'SEI',
   },
   rpcUrls: {
     default: {
-      http: ['https://testnet.evm.nodes.onflow.org']
+      http: ['https://evm-rpc-testnet.sei-apis.com']
     },
     public: {
-      http: ['https://testnet.evm.nodes.onflow.org']
+      http: ['https://evm-rpc-testnet.sei-apis.com']
     }
   }
 }
@@ -69,7 +69,7 @@ function BuyBet() {
         transport: custom(window.ethereum)
       })
 
-      // Switch to Flow Testnet
+      // Switch to SEITestnet
       try {
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
@@ -81,7 +81,7 @@ function BuyBet() {
             method: 'wallet_addEthereumChain',
             params: [{
               chainId: '0x221',
-              chainName: 'Flow Testnet',
+              chainName: 'SEITestnet',
               nativeCurrency: {
                 name: 'FLOW',
                 symbol: 'FLOW',
@@ -96,8 +96,8 @@ function BuyBet() {
 
       // Get current chain ID to verify
       const chainId = await walletClient.getChainId()
-      if (chainId !== 545) {
-        throw new Error('Please switch to Flow Testnet')
+      if (chainId !== 1328) {
+        throw new Error('Please switch to SEITestnet')
       }
 
       // Prepare the contract write
