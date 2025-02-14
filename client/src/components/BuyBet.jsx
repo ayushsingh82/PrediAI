@@ -8,7 +8,7 @@ import { usePrivy } from '@privy-io/react-auth'
 import { createPublicClient , http } from 'viem'
 import { createWalletClient ,custom } from 'viem'
 
-const flowTestnet = {
+const seiTestnet = {
   id: 1328,
   name: 'SEITestnet',
   network: 'sei-testnet',
@@ -54,7 +54,7 @@ function BuyBet() {
         throw new Error('Please enter an amount')
       }
 
-      // Convert amount to BigInt (1 FLOW = 1e18 wei)
+  
       const amountInWei = BigInt(Math.floor(Number(amount) * 1e18))
 
       // Create public client
@@ -65,7 +65,7 @@ function BuyBet() {
 
       // Create wallet client
       const walletClient = createWalletClient({
-        chain: flowTestnet,
+        chain: seiTestnet,
         transport: custom(window.ethereum)
       })
 
@@ -83,12 +83,12 @@ function BuyBet() {
               chainId: '0x221',
               chainName: 'SEITestnet',
               nativeCurrency: {
-                name: 'FLOW',
-                symbol: 'FLOW',
+                name: 'SEI',
+                symbol: 'SEI',
                 decimals: 18
               },
-              rpcUrls: ['https://testnet.evm.onflow.org'],
-              blockExplorerUrls: ['https://testnet.flowscan.org']
+                  rpcUrls: ['https://evm-rpc-testnet.sei-apis.com'],
+              blockExplorerUrls: ['https://testnet.sei.io/explorer']
             }]
           })
         }
@@ -165,7 +165,7 @@ function BuyBet() {
             {/* Amount Input */}
             <div className="bg-pink-200 p-5 rounded-xl border border-pink-400">
               <label className="block text-black text-sm font-semibold mb-2">
-                Amount (FLOW)
+                Amount (SEI)
               </label>
               <input
                 type="number"

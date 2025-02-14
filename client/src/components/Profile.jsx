@@ -52,8 +52,8 @@ function Profile() {
             <div className="border-b border-pink-800/60 py-3">
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="font-medium">Placed 0.5 FLOW</p>
-                  <p className="text-sm text-gray-700">"Will I win flow track"</p>
+                  <p className="font-medium">Placed 0.5 SEI</p>
+                  <p className="text-sm text-gray-700">"Will I win sei track"</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm text-gray-700">2 hours ago</p>
@@ -65,8 +65,8 @@ function Profile() {
             <div className="border-b border-pink-800/60 py-3">
               <div className="flex justify-between items-center">
                 <div>
-                  <p className="font-medium">Placed 1.2 FLOW</p>
-                  <p className="text-sm text-gray-700">"Will FLOW become leading green chain"</p>
+                  <p className="font-medium">Placed 1.2 SEI</p>
+                  <p className="text-sm text-gray-700">"Will SEI become leading red chain"</p>
                 </div>
                 <div className="text-right">
                   <p className="text-sm text-gray-700">5 hours ago</p>
